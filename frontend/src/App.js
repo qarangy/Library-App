@@ -1,6 +1,6 @@
 import BookForm from './components/BookForm/BookForm';
 import BookList from './components/BookList/BookList';
-import Filter from './components/Filter/Filter';
+// import Filter from './components/Filter/Filter';
 import './App.css';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         </div>
 
         <div className="app-right-column">
-          <Filter />
+          {/* <Filter /> */}
           <BookList />
         </div>
       </main>
@@ -25,5 +25,3 @@ function App() {
 }
 
 export default App;
-
-// npm install @reduxjs/toolkit@1.9.5 react-redux@8.1.2
