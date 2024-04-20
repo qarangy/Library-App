@@ -7,11 +7,11 @@ const BookList = () => {
     <div className="app-block book-list">
       <h2>Book List</h2>
       {books.length === 0 ? (
-        <p>Noo boks available</p>
+        <p>No boks available</p>
       ) : (
         <ul>
           {books.map((book, index) => (
-            <li key={index}>
+            <li key={book.id}>
               <div className="book-info">
                 {++index}. {book.title} by <strong>{book.author}</strong>
               </div>
