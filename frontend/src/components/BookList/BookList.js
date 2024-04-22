@@ -6,12 +6,14 @@ import './BookList.css';
 import {
   selectTitleFilter,
   selectAuthorFilter,
+  selectOnlyFavoriteFilter,
 } from '../../redux/slices/filterSlice';
 
 const BookList = () => {
   const books = useSelector((state) => state.books);
   const titleFilter = useSelector(selectTitleFilter);
   const authorFilter = useSelector(selectAuthorFilter);
+  const onlyFavoriteFilter = useSelector(selectOnlyFavoriteFilter);
   const dispatch = useDispatch();
 
   const handleDeleteBook = (id) => {
@@ -29,7 +31,8 @@ const BookList = () => {
     const mathesAuthor = book.author
       .toLowerCase()
       .includes(authorFilter.toLowerCase());
-    return matchesTitle && mathesAuthor;
+    const matchesFavorite = onlyFavoriteFilter ? book.isFavorite : true;
+    return matchesTitle && mathesAuthor && matchesFavorite;
   });
 
   return (
